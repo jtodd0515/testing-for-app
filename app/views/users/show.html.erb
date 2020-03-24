@@ -4,6 +4,8 @@
   <strong>Name:</strong>
   <%= @user.name %>
 </p>
-
+<%if @user.photo.attached?%>
+<%= image_tag(@user.photo), style:"width:500px; height:500px" %>
+<% end %>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
